@@ -1,40 +1,126 @@
 function App() {
   return (
     <>
-      <main className="min-h-screen">
-        <h1 className="text-lg font-bold uppercase tracking-[5px] p-10 ">
-          We're launching soon
-        </h1>
-        <section
-          id="timer"
-          className="text-Soft-red text-4xl font-bold flex justify-center gap-4"
-        >
-          <div>
-            <div className="bg-Dark-desaturated-blue p-3 rounded-md">08</div>
-            <div className="text-[0.45rem] text-Grayish-blue tracking-[3px]">
-              DAYS
+      <main className="font-Red-Hat">
+        <section className="pt-[15vh]">
+          <h1 className="text-lg font-bold uppercase tracking-[5px] p-10 ">
+            We're launching soon
+          </h1>
+          <div
+            id="timer"
+            className="text-Soft-red text-4xl font-bold flex justify-center gap-4"
+          >
+            <div>
+              <div
+                id="block"
+                className="relative w-[4.5rem] h-16 drop-shadow-lg grid place-content-center overflow-hidden bg-Dark-desaturated-blue rounded-md"
+              >
+                <div className="">08</div>
+                <div
+                  id="upper-half"
+                  className="absolute bg-Dark-blue w-full h-8 rounded-t-md opacity-[30%]"
+                ></div>
+                {/* <div
+                  id="lower-half"
+                  className="absolute bottom-0 bg-Dark-desaturated-blue w-full h-8 rounded-b-md"
+                ></div> */}
+                <div
+                  id="left-dot"
+                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -left-[3px]"
+                ></div>
+                <div
+                  id="right-dot"
+                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -right-[3px]"
+                ></div>
+              </div>
+              <div className="text-[0.475rem] text-Grayish-blue tracking-[3px] -mt-1">
+                DAYS
+              </div>
             </div>
-          </div>
-          <div>
-            <div className="bg-Dark-desaturated-blue p-3 rounded-md">23</div>
-            <div className="text-[0.45rem] text-Grayish-blue tracking-[3px]">
-              HOURS
+            <div>
+              <div
+                id="block"
+                className="relative w-[4.5rem] h-16 drop-shadow-lg grid place-content-center overflow-hidden bg-Dark-desaturated-blue rounded-md"
+              >
+                <div className="">23</div>
+                <div
+                  id="upper-half"
+                  className="absolute bg-Dark-blue w-full h-8 rounded-t-md opacity-[30%]"
+                ></div>
+                {/* <div
+                  id="lower-half"
+                  className="absolute bottom-0 bg-Dark-desaturated-blue w-full h-8 rounded-b-md"
+                ></div> */}
+                <div
+                  id="left-dot"
+                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -left-[3px]"
+                ></div>
+                <div
+                  id="right-dot"
+                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -right-[3px]"
+                ></div>
+              </div>
+              <div className="text-[0.475rem] text-Grayish-blue tracking-[3px] -mt-1">
+                HOURS
+              </div>
             </div>
-          </div>
-          <div>
-            <div className="bg-Dark-desaturated-blue p-3 rounded-md">55</div>
-            <div className="text-[0.45rem] text-Grayish-blue tracking-[3px]">
-              MINUTES
+            <div>
+              <div
+                id="block"
+                className="relative w-[4.5rem] h-16 drop-shadow-lg grid place-content-center overflow-hidden bg-Dark-desaturated-blue rounded-md"
+              >
+                <div className="">55</div>
+                <div
+                  id="upper-half"
+                  className="absolute bg-Dark-blue w-full h-8 rounded-t-md opacity-[30%]"
+                ></div>
+                {/* <div
+                  id="lower-half"
+                  className="absolute bottom-0 bg-Dark-desaturated-blue w-full h-8 rounded-b-md"
+                ></div> */}
+                <div
+                  id="left-dot"
+                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -left-[3px]"
+                ></div>
+                <div
+                  id="right-dot"
+                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -right-[3px]"
+                ></div>
+              </div>
+              <div className="text-[0.475rem] text-Grayish-blue tracking-[3px] -mt-1">
+                MINUTES
+              </div>
             </div>
-          </div>
-          <div>
-            <div className="bg-Dark-desaturated-blue p-3 rounded-md">41</div>
-            <div className="text-[0.45rem] text-Grayish-blue tracking-[3px]">
-              SECONDS
+            <div>
+              <div
+                id="block"
+                className="relative w-[4.5rem] h-16 drop-shadow-lg grid place-content-center overflow-hidden bg-Dark-desaturated-blue rounded-md"
+              >
+                <div className="">41</div>
+                <div
+                  id="upper-half"
+                  className="absolute bg-Dark-blue w-full h-8 rounded-t-md opacity-[30%]"
+                ></div>
+                {/* <div
+                  id="lower-half"
+                  className="absolute bottom-0 bg-Dark-desaturated-blue w-full h-8 rounded-b-md"
+                ></div> */}
+                <div
+                  id="left-dot"
+                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -left-[3px]"
+                ></div>
+                <div
+                  id="right-dot"
+                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -right-[3px]"
+                ></div>
+              </div>
+              <div className="text-[0.475rem] text-Grayish-blue tracking-[3px] -mt-1">
+                SECONDS
+              </div>
             </div>
           </div>
         </section>
-        <div
+        <section
           id="social"
           className="flex justify-center gap-8 absolute bottom-10 mx-auto w-screen "
         >
@@ -56,8 +142,25 @@ function App() {
               d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
             />
           </svg>
-        </div>
+        </section>
       </main>
+      {/* <img
+        className=" min-w-max absolute bottom-0 left-0 -z-10 "
+        src="pattern-hills.svg"
+        alt="hills background"
+      /> */}
+      <svg
+        className="h-screen w-screen absolute top-0 left-0 -z-10"
+        xmlns="http://www.w3.org/2000/svg"
+        width="1440"
+        height="569"
+      >
+        <path
+          fill="#46485B"
+          fill-rule="evenodd"
+          d="M774 563a3 3 0 110 6 3 3 0 010-6zm-623.5-5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm875 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-523-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm233-7a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM178 542a3 3 0 110 6 3 3 0 010-6zm1127.5 2a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm45.5-10a3 3 0 110 6 3 3 0 010-6zm-565.5-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-784-15a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm278.5-9a3 3 0 110 6 3 3 0 010-6zm207.5-30a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm50-17a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm233-8a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm465-22a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-699-6a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-465-22a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm1165-8a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-50-17a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM250 345a3 3 0 110 6 3 3 0 010-6zm450.5-7a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-614-15a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm520-13a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-570-4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm1169.5-7a3 3 0 110 6 3 3 0 010-6zm-4.5 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-875-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm523 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-392-34a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm656 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-1008-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm1298-7a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-570-4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm520-13a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-145.5-9a3 3 0 110 6 3 3 0 010-6zm-601.5-6a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm499.5-29a3 3 0 110 6 3 3 0 010-6zm-985.5-10a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-50-17a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm1298-8a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-465-22a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-832-6a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm33.5-18a3 3 0 110 6 3 3 0 010-6zm431.5-4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm366-8a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm50-17a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm486-39a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM1136 29a3 3 0 110 6 3 3 0 010-6zm-614.5-2a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM412 23a3 3 0 110 6 3 3 0 010-6zM1.5 14a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm570-4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm366-7a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-656-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm1008 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"
+        />
+      </svg>
     </>
   );
 }

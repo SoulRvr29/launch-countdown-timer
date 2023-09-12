@@ -16,4 +16,5 @@ body {
   color: var(--White);
   font-size: 14px;
   text-align: center;
+  min-height: 100vh;
 }
