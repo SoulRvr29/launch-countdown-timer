@@ -1,4 +1,34 @@
+import TimerBlock from "./TimerBlock";
+import { useState, useEffect } from "react";
+
 function App() {
+  const [days, setDays] = useState(14);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    let interval;
+    interval = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds((seconds) => seconds - 1);
+      } else if (minutes > 0) {
+        setMinutes((minutes) => minutes - 1);
+        setSeconds(59);
+      } else if (hours > 0) {
+        setHours((hours) => hours - 1);
+        setSeconds(59);
+        setMinutes(59);
+      } else if (days > 0) {
+        setDays((days) => days - 1);
+        setSeconds(59);
+        setMinutes(59);
+        setHours(59);
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [seconds]);
+
   return (
     <>
       <main className="font-Red-Hat">
@@ -10,114 +40,10 @@ function App() {
             id="timer"
             className="text-Soft-red text-4xl font-bold flex justify-center gap-4"
           >
-            <div>
-              <div
-                id="block"
-                className="relative w-[4.5rem] h-16 drop-shadow-lg grid place-content-center overflow-hidden bg-Dark-desaturated-blue rounded-md"
-              >
-                <div className="">08</div>
-                <div
-                  id="upper-half"
-                  className="absolute bg-Dark-blue w-full h-8 rounded-t-md opacity-[30%]"
-                ></div>
-                {/* <div
-                  id="lower-half"
-                  className="absolute bottom-0 bg-Dark-desaturated-blue w-full h-8 rounded-b-md"
-                ></div> */}
-                <div
-                  id="left-dot"
-                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -left-[3px]"
-                ></div>
-                <div
-                  id="right-dot"
-                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -right-[3px]"
-                ></div>
-              </div>
-              <div className="text-[0.475rem] text-Grayish-blue tracking-[3px] -mt-1">
-                DAYS
-              </div>
-            </div>
-            <div>
-              <div
-                id="block"
-                className="relative w-[4.5rem] h-16 drop-shadow-lg grid place-content-center overflow-hidden bg-Dark-desaturated-blue rounded-md"
-              >
-                <div className="">23</div>
-                <div
-                  id="upper-half"
-                  className="absolute bg-Dark-blue w-full h-8 rounded-t-md opacity-[30%]"
-                ></div>
-                {/* <div
-                  id="lower-half"
-                  className="absolute bottom-0 bg-Dark-desaturated-blue w-full h-8 rounded-b-md"
-                ></div> */}
-                <div
-                  id="left-dot"
-                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -left-[3px]"
-                ></div>
-                <div
-                  id="right-dot"
-                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -right-[3px]"
-                ></div>
-              </div>
-              <div className="text-[0.475rem] text-Grayish-blue tracking-[3px] -mt-1">
-                HOURS
-              </div>
-            </div>
-            <div>
-              <div
-                id="block"
-                className="relative w-[4.5rem] h-16 drop-shadow-lg grid place-content-center overflow-hidden bg-Dark-desaturated-blue rounded-md"
-              >
-                <div className="">55</div>
-                <div
-                  id="upper-half"
-                  className="absolute bg-Dark-blue w-full h-8 rounded-t-md opacity-[30%]"
-                ></div>
-                {/* <div
-                  id="lower-half"
-                  className="absolute bottom-0 bg-Dark-desaturated-blue w-full h-8 rounded-b-md"
-                ></div> */}
-                <div
-                  id="left-dot"
-                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -left-[3px]"
-                ></div>
-                <div
-                  id="right-dot"
-                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -right-[3px]"
-                ></div>
-              </div>
-              <div className="text-[0.475rem] text-Grayish-blue tracking-[3px] -mt-1">
-                MINUTES
-              </div>
-            </div>
-            <div>
-              <div
-                id="block"
-                className="relative w-[4.5rem] h-16 drop-shadow-lg grid place-content-center overflow-hidden bg-Dark-desaturated-blue rounded-md"
-              >
-                <div className="">41</div>
-                <div
-                  id="upper-half"
-                  className="absolute bg-Dark-blue w-full h-8 rounded-t-md opacity-[30%]"
-                ></div>
-                {/* <div
-                  id="lower-half"
-                  className="absolute bottom-0 bg-Dark-desaturated-blue w-full h-8 rounded-b-md"
-                ></div> */}
-                <div
-                  id="left-dot"
-                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -left-[3px]"
-                ></div>
-                <div
-                  id="right-dot"
-                  className="h-[6px] w-[6px] bg-Dark-blue absolute rounded-full top-[calc(50%-3px)] -right-[3px]"
-                ></div>
-              </div>
-              <div className="text-[0.475rem] text-Grayish-blue tracking-[3px] -mt-1">
-                SECONDS
-              </div>
-            </div>
+            <TimerBlock type="days" value={days} />
+            <TimerBlock type="hours" value={hours} />
+            <TimerBlock type="minutes" value={minutes} />
+            <TimerBlock type="seconds" value={seconds} />
           </div>
         </section>
         <section
