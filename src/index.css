@@ -18,3 +18,35 @@ body {
   text-align: center;
   min-height: 100vh;
 }
+#block-type {
+  color: hsl(237, 18%, 59%);
+  font-size: 8px;
+}
+
+#upper-half {
+  animation: upper-rotate 0.5s linear forwards;
+}
+
+@keyframes upper-rotate {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+#lower-half {
+  transform: rotateX(90deg);
+  animation: lower-rotate 0.5s linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes lower-rotate {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
