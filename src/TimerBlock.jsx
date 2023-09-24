@@ -3,13 +3,13 @@ import { useState } from "react";
 const TimerBlock = ({ type, value }) => {
   const [test, setTest] = useState(0);
   setTimeout(() => {
-    document.querySelectorAll("#number-block").forEach((item) => {
-      item.setAttribute("upper-value", value);
+    document.querySelector(".number-block")((item) => {
+      if (type == "seconds") item.setAttribute("upper-value", value);
     });
   }, 500);
   setTimeout(() => {
-    document.querySelectorAll("#number-block").forEach((item) => {
-      item.setAttribute("lower-value", value - 1);
+    document.querySelector(".number-block")((item) => {
+      if (type == "seconds") item.setAttribute("lower-value", value - 1);
     });
     setTimeout(() => {
       setTest(value - 1);
@@ -20,7 +20,7 @@ const TimerBlock = ({ type, value }) => {
     <div>
       <div
         id="number-block"
-        className="relative w-[4.5rem] h-16 drop-shadow-lg grid place-content-center"
+        className="number-block relative w-[4.5rem] h-16 drop-shadow-lg grid place-content-center"
       >
         <div
           id="upper-half"
