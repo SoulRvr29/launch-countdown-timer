@@ -13,7 +13,7 @@
 }
 
 body {
-  background: linear-gradient(to top, var(--Dark-blue), var(--Very-dark-blue));
+  background: linear-gradient(to top, hsl(273, 30%, 15%), var(--Dark-blue));
   color: var(--White);
   font-size: 14px;
   text-align: center;
