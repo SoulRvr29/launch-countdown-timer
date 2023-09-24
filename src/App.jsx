@@ -7,27 +7,27 @@ function App() {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  // useEffect(() => {
-  //   let interval;
-  //   interval = setInterval(() => {
-  //     if (seconds > 0) {
-  //       setSeconds((seconds) => seconds - 1);
-  //     } else if (minutes > 0) {
-  //       setMinutes((minutes) => minutes - 1);
-  //       setSeconds(59);
-  //     } else if (hours > 0) {
-  //       setHours((hours) => hours - 1);
-  //       setSeconds(59);
-  //       setMinutes(59);
-  //     } else if (days > 0) {
-  //       setDays((days) => days - 1);
-  //       setSeconds(59);
-  //       setMinutes(59);
-  //       setHours(59);
-  //     }
-  //   }, 1000);
-  //   return () => clearInterval(interval);
-  // }, [seconds]);
+  useEffect(() => {
+    let interval;
+    interval = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds((seconds) => seconds - 1);
+      } else if (minutes > 0) {
+        setMinutes((minutes) => minutes - 1);
+        setSeconds(59);
+      } else if (hours > 0) {
+        setHours((hours) => hours - 1);
+        setSeconds(59);
+        setMinutes(59);
+      } else if (days > 0) {
+        setDays((days) => days - 1);
+        setSeconds(59);
+        setMinutes(59);
+        setHours(59);
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [seconds]);
 
   return (
     <>
