@@ -12,11 +12,11 @@ const TimerBlock = ({ type, value }) => {
         ></div>
         <div
           id="left-dot"
-          className="max-md:h-[6px] max-md:w-[6px] w-3 h-3 bg-Dark-blue absolute rounded-full max-md:top-[calc(50%-3px)] max-md-left-[3px]  top-[calc(50%-6px)] -left-[6px] z-10"
+          className="max-md:h-[6px] max-md:w-[6px] w-3 h-3 bg-Dark-blue absolute rounded-full max-md:top-[calc(50%-3px)]  top-[calc(50%-6px)] -left-[6px] max-md:-left-[3px]  z-10"
         ></div>
         <div
           id="right-dot"
-          className="max-md:h-[6px] max-md:w-[6px] w-3 h-3 bg-Dark-blue absolute rounded-full max-md:top-[calc(50%-3px)] max-md-right-[3px] top-[calc(50%-6px)] -right-[6px] z-10"
+          className="max-md:h-[6px] max-md:w-[6px] w-3 h-3 bg-Dark-blue absolute rounded-full max-md:top-[calc(50%-3px)] max-md:-right-[3px] top-[calc(50%-6px)] -right-[6px] z-10"
         ></div>
       </div>
       <div className="max-md:scale-[60%] text-Grayish-blue max-md:text-[3px] text-sm tracking-[5px]  uppercase max-md:w-[4.5rem] max-md:mt-2 mt-6 ">
