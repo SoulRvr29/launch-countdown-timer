@@ -1,5 +1,3 @@
-# Building in progress...
-
 # Frontend Mentor - Launch countdown timer solution
 
 This is a solution to the [Launch countdown timer challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-).
@@ -27,7 +25,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/launch-countdown-timer-b1NeeylmY2](https://www.frontendmentor.io/solutions/launch-countdown-timer-b1NeeylmY2)
 - Live Site URL: [https://soulrvr29.github.io/launch-countdown-timer/](https://soulrvr29.github.io/launch-countdown-timer/)
 
 ### Built with
