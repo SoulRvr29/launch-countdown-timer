@@ -4,7 +4,7 @@ const Footer = () => {
       Challenge by
       <a
         className="text-Soft-red ml-2 hover:text-White hover:underline transition-all duration-300"
-        href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX"
+        href="https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-"
         target="_blank"
       >
         Frontend Mentor
