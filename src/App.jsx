@@ -33,7 +33,7 @@ function App() {
   return (
     <>
       <main className="font-Red-Hat bg">
-        <section className="pt-[15vh]">
+        <section className="max-md:pt-[15vh]">
           <h1 className="max-md:text-lg text-[22px] font-bold uppercase tracking-[7px] max-md:tracking-[5px] max-md:p-10 p-[100px]">
             We're launching soon
           </h1>
@@ -78,12 +78,12 @@ function App() {
         </section>
       </main>
       <img
-        className=" min-w-max absolute bottom-0 right-0 w-screen"
+        className=" min-w-max absolute bottom-0 right-0 w-screen -z-10"
         src="pattern-hills.svg"
         alt="hills background"
       />
       <svg
-        className="h-screen w-screen absolute top-0 left-0 z-[5]"
+        className="h-screen w-screen absolute top-0 left-0 -z-20"
         xmlns="http://www.w3.org/2000/svg"
         width="1440"
         height="569"
