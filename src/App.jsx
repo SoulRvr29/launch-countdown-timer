@@ -1,34 +1,53 @@
 import TimerBlock from "./TimerBlock";
-import { useState, useEffect } from "react";
+import { useReducer, useEffect } from "react";
 import Footer from "./Footer";
 
+function reducer(state, action) {
+  switch (action.type) {
+    case "countDownSeconds":
+      return { ...state, seconds: state.seconds - 1 };
+    case "countDownMinutes":
+      return { ...state, minutes: state.minutes - 1, seconds: 59 };
+    case "countDownHours":
+      return { ...state, hours: state.hours - 1, minutes: 59, seconds: 59 };
+    case "countDownDays":
+      return {
+        ...state,
+        days: state.days - 1,
+        hours: 59,
+        minutes: 59,
+        seconds: 59,
+      };
+    default:
+      throw new Error();
+  }
+}
+
 function App() {
-  const [days, setDays] = useState(14);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+  const initialState = {
+    days: 14,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     let interval;
     interval = setInterval(() => {
-      if (seconds > 0) {
-        setSeconds((seconds) => seconds - 1);
-      } else if (minutes > 0) {
-        setMinutes((minutes) => minutes - 1);
-        setSeconds(59);
-      } else if (hours > 0) {
-        setHours((hours) => hours - 1);
-        setSeconds(59);
-        setMinutes(59);
-      } else if (days > 0) {
-        setDays((days) => days - 1);
-        setSeconds(59);
-        setMinutes(59);
-        setHours(59);
+      if (state.seconds > 0) {
+        dispatch({ type: "countDownSeconds" });
+      } else if (state.minutes > 0) {
+        dispatch({ type: "countDownMinutes" });
+      } else if (state.hours > 0) {
+        dispatch({ type: "countDownHours" });
+      } else if (state.days > 0) {
+        dispatch({ type: "countDownDays" });
       }
     }, 1000);
     return () => clearInterval(interval);
-  }, [seconds]);
+  }, [state.seconds]);
 
   return (
     <>
@@ -41,10 +60,10 @@ function App() {
             id="timer"
             className="text-Soft-red text-4xl font-bold flex justify-center max-md:gap-4 gap-8"
           >
-            <TimerBlock type="days" value={days} />
-            <TimerBlock type="hours" value={hours} />
-            <TimerBlock type="minutes" value={minutes} />
-            <TimerBlock type="seconds" value={seconds} />
+            <TimerBlock type="days" value={state.days} />
+            <TimerBlock type="hours" value={state.hours} />
+            <TimerBlock type="minutes" value={state.minutes} />
+            <TimerBlock type="seconds" value={state.seconds} />
           </div>
         </section>
         <section
@@ -90,7 +109,7 @@ function App() {
       >
         <path
           fill="#46485B"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           d="M774 563a3 3 0 110 6 3 3 0 010-6zm-623.5-5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm875 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-523-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm233-7a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM178 542a3 3 0 110 6 3 3 0 010-6zm1127.5 2a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm45.5-10a3 3 0 110 6 3 3 0 010-6zm-565.5-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-784-15a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm278.5-9a3 3 0 110 6 3 3 0 010-6zm207.5-30a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm50-17a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm233-8a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm465-22a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-699-6a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-465-22a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm1165-8a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-50-17a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM250 345a3 3 0 110 6 3 3 0 010-6zm450.5-7a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-614-15a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm520-13a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-570-4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm1169.5-7a3 3 0 110 6 3 3 0 010-6zm-4.5 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-875-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm523 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-392-34a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm656 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-1008-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm1298-7a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-570-4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm520-13a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-145.5-9a3 3 0 110 6 3 3 0 010-6zm-601.5-6a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm499.5-29a3 3 0 110 6 3 3 0 010-6zm-985.5-10a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-50-17a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm1298-8a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-465-22a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-832-6a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm33.5-18a3 3 0 110 6 3 3 0 010-6zm431.5-4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm366-8a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm50-17a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm486-39a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM1136 29a3 3 0 110 6 3 3 0 010-6zm-614.5-2a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM412 23a3 3 0 110 6 3 3 0 010-6zM1.5 14a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm570-4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm366-7a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm-656-3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm1008 0a1.5 1.5 0 110 3 1.5 1.5 0 010-3z"
         />
       </svg>
