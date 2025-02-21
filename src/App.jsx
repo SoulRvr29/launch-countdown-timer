@@ -18,6 +18,15 @@ function reducer(state, action) {
         minutes: 59,
         seconds: 59,
       };
+    case "speedUp":
+      if (state.period > 1)
+        return {
+          ...state,
+          period: state.period / 10,
+        };
+      else {
+        return { ...state, period: 1000 };
+      }
     default:
       throw new Error();
   }
@@ -29,6 +38,7 @@ function App() {
     hours: 0,
     minutes: 0,
     seconds: 0,
+    period: 1000,
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -45,13 +55,28 @@ function App() {
       } else if (state.days > 0) {
         dispatch({ type: "countDownDays" });
       }
-    }, 1000);
+    }, state.period);
     return () => clearInterval(interval);
   }, [state.seconds]);
 
   return (
     <>
       <main className="font-Red-Hat bg">
+        <div className="fixed top-2 right-2 flex flex-col items-center gap-2 w-36 max-md:text-xs">
+          <div className="bg-Dark-desaturated-blue p-1 px-3 w-full text-left rounded-lg">
+            interval: {state.period}ms
+          </div>
+          <button
+            className="bg-Dark-desaturated-blue p-1 px-3 rounded-lg hover:bg-Soft-red transition-colors"
+            title="speed up"
+            onClick={() => {
+              dispatch({ type: "speedUp" });
+              console.log(state.period);
+            }}
+          >
+            &gt;&gt;
+          </button>
+        </div>
         <section className="max-md:pt-[15vh]">
           <h1 className="max-md:text-lg text-[22px] font-bold uppercase tracking-[7px] max-md:tracking-[5px] max-md:p-10 p-[100px]">
             We're launching soon
